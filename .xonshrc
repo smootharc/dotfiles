@@ -1,10 +1,11 @@
 #vi:syntax=python
 
-$XONSH_SHOW_TRACEBACK = False
-$XONSH_TRACEBACK_LOGFILE = "/home/paul/.xonsh.log"
+from pathlib import Path
 
-#import sqlite3
-#from prompt_toolkit import prompt
+$XONSH_SHOW_TRACEBACK = False
+$XONSH_TRACEBACK_LOGFILE = "/home/paul/.cache/xonsh.log"
+$XONSH_HISTORY_BACKEND = "json"
+$AUTO_SUGGEST_IN_COMPLETIONS = True
 
 $AUTO_PUSHD = '0'
 $AUTO_SUGGEST_IN_COMPLETIONS = '1'
@@ -22,6 +23,7 @@ $VI_MODE = True
 $PAGER = 'less'
 $FONTCONFIG_PATH = '/etc/fonts'
 $BROWSER = 'chromium'
+$COMPLETIONS_CONFIRM=True
 
 aliases['hds'] = 'udisksctl status'
 aliases['hdu'] = 'udisksctl unmount -b'
@@ -34,7 +36,27 @@ aliases['date'] = 'date -R'
 aliases['inxi'] = 'doas inxi'
 aliases['l'] = 'exa'
 aliases['la'] = 'exa -a'
-aliases['ll'] = 'exa -Hl'
-aliases['lla'] = 'exa -Hla'
+aliases['ll'] = 'exa -gHl'
+aliases['lla'] = 'exa -gHla'
 
-xontrib jedi prompt_ret_code vox # coreutils bashisms
+xontrib jedi prompt_ret_code vox z autovox whole_word_jumping prompt_vi_mode #coreutils  bashisms
+
+#@events.on_chdir
+#def on_chdir(olddir: str, newdir: str, **kw):
+#    if 'paul/projects' in newdir:
+#        $MEDICALDB = Path(newdir) / '.local' / 'share' / 'medical.db' 
+#        echo 'Medical database environment variable set to:' $MEDICALDB 
+#    else:
+#        $MEDICALDB = Path().home() / '.local' / 'share' / 'medical.db' 
+
+@events.autovox_policy
+def dotvenv_policy(path, **_):
+    venv = path / '.venv'
+    if venv.exists():
+        return venv.read_text().strip()
+
+def electric(epp, electric, gas):
+    total = electric + gas
+    return f"Electric: {round(electric + (epp * electric/total),2)} Gas: {round(gas + (epp * gas/total),2)}"
+
+
