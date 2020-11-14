@@ -1,3 +1,3 @@
 function fish_right_prompt
-date
+    date -R
 end

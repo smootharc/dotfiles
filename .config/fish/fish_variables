@@ -6,7 +6,6 @@ SETUVAR --export RESTIC_PASSWORD_FILE:/home/paul/\x2econfig/restic/password
 SETUVAR --export RESTIC_REPOSITORY:/backup/paul
 SETUVAR --export VISUAL:vim
 SETUVAR __fish_initialized:3100
-SETUVAR _fish_abbr_date:date\x20\x2dR
 SETUVAR _fish_abbr_rs:restic\x20snapshots
 SETUVAR fish_color_autosuggestion:585858
 SETUVAR fish_color_cancel:\x2dr
