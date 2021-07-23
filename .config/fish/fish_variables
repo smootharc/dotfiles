@@ -12,6 +12,7 @@ SETUVAR Z_DATA:/home/paul/\x2elocal/share/z/data
 SETUVAR Z_DATA_DIR:/home/paul/\x2elocal/share/z
 SETUVAR Z_EXCLUDE:\x5e/home/paul\x24
 SETUVAR __fish_initialized:3100
+SETUVAR _fish_abbr_di:dose\x20insert
 SETUVAR _fish_abbr_dl:dose\x20list
 SETUVAR _fish_abbr_jc:journalctl
 SETUVAR _fish_abbr_jcu:journalctl\x20\x2d\x2duser
