@@ -2,6 +2,7 @@
 # VERSION: 3.0
 SETUVAR --path CDPATH:\x2e\x1e/home/paul\x1e/home/paul/\x2econfig\x1e/home/paul/\x2econfig/systemd
 SETUVAR --export EDITOR:vim
+SETUVAR FZF_LEGACY_KEYBINDINGS:0
 SETUVAR MANPAGER:\x1d
 SETUVAR --export RESTIC_PASSWORD_FILE:/home/paul/\x2econfig/restic/password
 SETUVAR --export RESTIC_REPOSITORY:/backup/paul
@@ -14,16 +15,27 @@ SETUVAR Z_EXCLUDE:\x5e/home/paul\x24
 SETUVAR __fish_initialized:3100
 SETUVAR _fish_abbr_di:dose\x20insert
 SETUVAR _fish_abbr_dl:dose\x20list
+SETUVAR _fish_abbr_hdm:udisksctl\x20mount\x20\x2db
+SETUVAR _fish_abbr_hds:udisksctl\x20status
+SETUVAR _fish_abbr_hdu:udisksctl\x20unmount\x20\x2db
+SETUVAR _fish_abbr_inxi:doas\x20inxi
 SETUVAR _fish_abbr_jc:journalctl
 SETUVAR _fish_abbr_jcu:journalctl\x20\x2d\x2duser
-SETUVAR _fish_abbr_la:exa\x20\x2dlga\x20\x2d\x2dchanged
-SETUVAR _fish_abbr_ll:exa\x20\x2dlg\x20\x2d\x2dchanged
+SETUVAR _fish_abbr_l:exa
+SETUVAR _fish_abbr_la:exa\x20\x2da
+SETUVAR _fish_abbr_ll:exa\x20\x2dl
+SETUVAR _fish_abbr_lla:exa\x20\x2dla
+SETUVAR _fish_abbr_mount:doas\x20mount
+SETUVAR _fish_abbr_pacman:doas\x20pacman
 SETUVAR _fish_abbr_rc:restic\x20check
 SETUVAR _fish_abbr_rl:restic\x20ls
 SETUVAR _fish_abbr_rll:restic\x20ls\x20latest\x20\x26\x7c\x20less
 SETUVAR _fish_abbr_rs:restic\x20snapshots
+SETUVAR _fish_abbr_sc:systemctl
+SETUVAR _fish_abbr_scu:systemctl\x20\x2d\x2duser
+SETUVAR _fish_abbr_tree:exa\x20\x2d\x2dtree
+SETUVAR _fish_abbr_ug:doas\x20pacman\x20\x2dSyyu
 SETUVAR _fish_abbr_we:curl\x20wttr\x2ein/08096
-SETUVAR _fish_abbr_wfi:wf\x20insert
 SETUVAR _fish_abbr_wfs:wf\x20select
 SETUVAR _fisher_jethrokuan_2F_z_files:/home/paul/\x2econfig/fish/functions/__z\x2efish\x1e/home/paul/\x2econfig/fish/functions/__z_add\x2efish\x1e/home/paul/\x2econfig/fish/functions/__z_clean\x2efish\x1e/home/paul/\x2econfig/fish/functions/__z_complete\x2efish\x1e/home/paul/\x2econfig/fish/conf\x2ed/z\x2efish
 SETUVAR _fisher_jorgebucaran_2F_fisher_files:/home/paul/\x2econfig/fish/functions/fisher\x2efish\x1e/home/paul/\x2econfig/fish/completions/fisher\x2efish
