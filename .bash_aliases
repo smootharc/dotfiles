@@ -33,8 +33,8 @@ export -f calc
 export -f hdu
 export -f hdt
 export INFO_PRINT_COMMAND="a2ps -s 2"
-export EDITOR=vim
-export VISUAL=vim
+export EDITOR=nvim
+export VISUAL=nvim
 export HISTSIZE=5000
 export HISTFILESIZE=5000
 export HISTCONTROL=erasedups:ignoreboth
