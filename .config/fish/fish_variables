@@ -11,8 +11,6 @@ SETUVAR FZF_TMUX_HEIGHT:40\x25
 SETUVAR --export RESTIC_PASSWORD_FILE:/home/paul/\x2econfig/restic/password
 SETUVAR --export RESTIC_REPOSITORY:/backup/paul
 SETUVAR __fish_initialized:3100
-SETUVAR _fish_abbr_di:dose\x20insert
-SETUVAR _fish_abbr_dl:dose\x20list
 SETUVAR _fish_abbr_hdm:udisksctl\x20mount\x20\x2db
 SETUVAR _fish_abbr_hds:udisksctl\x20status
 SETUVAR _fish_abbr_hdu:udisksctl\x20unmount\x20\x2db
