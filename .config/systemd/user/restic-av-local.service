@@ -1,0 +1,9 @@
+[Unit]
+Description=Backup /home/paul AV directories to local restic repository.
+
+[Service]
+Type=oneshot
+Restart=on-failure
+RestartSec=30min
+ExecStartPre=restic unlock
+ExecStart=systemd-inhibit nice restic backup /home/paul/Pictures /home/paul/Music /home/paul/Videos /home/paul/XXX

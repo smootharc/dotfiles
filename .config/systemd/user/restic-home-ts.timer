@@ -1,0 +1,9 @@
+[Unit]
+Description=Timer for periodic backup of /home/paul to host ts repository.
+
+[Timer]
+OnCalendar=08..23/4:15
+RandomizedDelaySec=30min
+
+[Install]
+WantedBy=timers.target

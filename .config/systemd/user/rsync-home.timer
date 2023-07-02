@@ -1,0 +1,10 @@
+[Unit]
+Description=Daily sync to synchost.
+
+[Timer]
+OnCalendar=06:00
+RandomizedDelaySec=2h
+Persistent=True
+
+[Install]
+WantedBy=timers.target

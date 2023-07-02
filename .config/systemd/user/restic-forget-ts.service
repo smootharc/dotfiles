@@ -1,0 +1,12 @@
+[Unit]
+Description=Forget and prune ts restic repository.
+StartLimitIntervalSec=60m
+StartLimitBurst=5
+
+[Service]
+Type=oneshot
+Restart=on-failure
+RestartSec=5min
+ExecStart=restic -r sftp:ts:/backup/paul forget --keep-within=3m
+ExecStart=systemd-inhibit restic -r sftp:ts:/backup/paul --cleanup-cache prune
+ExecStartPost=systemd-inhibit restic -r sftp:ts:/backup/paul check

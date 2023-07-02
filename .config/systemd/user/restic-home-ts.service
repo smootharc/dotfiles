@@ -1,0 +1,11 @@
+[Unit]
+Description=Backup of /home/paul to hostname ts restic repository.
+StartLimitIntervalSec=60
+StartLimitBurst=10
+
+[Service]
+Type=oneshot
+Restart=on-failure
+RestartSec=5
+ExecStartPre=/usr/bin/sleep 1
+ExecStart=restic -r sftp:ts:/backup/paul --exclude-file /home/paul/.config/restic/exclude-home backup /home/paul

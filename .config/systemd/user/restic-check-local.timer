@@ -1,0 +1,13 @@
+[Unit]
+Description=Timer for restic check of local repository.
+
+[Timer]
+OnCalendar=daily
+#OnCalendar=*-*-* 01:00
+#OnCalendar=Tue *-*-* 01:00
+#OnCalendar=Tue *-*-1..7
+RandomizedDelaySec=1h
+Persistent=true
+
+[Install]
+WantedBy=timers.target

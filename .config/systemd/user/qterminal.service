@@ -1,0 +1,11 @@
+[Unit]
+Description=Run qterminal dropdown
+StartLimitIntervalSec=1
+#StartLimitBurst=5
+
+[Service]
+ExecStart=/usr/bin/qterminal -d
+Restart=always
+
+[Install]
+WantedBy=default.target

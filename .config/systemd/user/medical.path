@@ -1,0 +1,8 @@
+[Unit]
+Description=Path unit to activate medical.service which rsyncs ~/.local/share/medical.db to synchost after changes.
+
+[Path]
+PathChanged=/home/paul/.local/share/medical.db
+
+[Install]
+WantedBy=paths.target

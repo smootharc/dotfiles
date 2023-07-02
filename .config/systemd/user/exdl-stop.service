@@ -1,0 +1,10 @@
+[Unit]
+Description=Extract zips and rars when /home/paul/Downloads is not empty.
+
+[Service]
+ExecStart=/usr/bin/systemctl --user stop exdl
+#PathExistsGlob=/home/paul/Downloads/*
+#PathChanged=/home/paul/Downloads
+
+[Install]
+WantedBy=service.target

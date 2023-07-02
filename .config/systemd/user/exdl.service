@@ -1,0 +1,28 @@
+[Unit]
+Description=Extract zips and rars from ~/Downloads directory.
+StartLimitIntervalSec=1m
+StartLimitBurst=100
+
+[Service]
+Type=oneshot
+ExecStart=find /home/paul/Downloads -name "_unpack" -prune , -name "*par2" -not -name "*vol*par2" -execdir par2repair '{}' \;
+ExecStart=find /home/paul/Downloads -name "_unpack" -prune , -type f -name "*zip" -execdir unzip -o '{}' \;
+#ExecStart=find /home/paul/Downloads -name "_unpack" -prune , -type f -name "*zip" -execdir unzip -n -q '{}' \;
+ExecStart=find /home/paul/Downloads -name "_unpack" -prune , -type f -name "*rar" -execdir unrar x -y -o+ -p- '{}' \;
+#ExecStart=find /home/paul/Downloads -name "_unpack" -prune , -type f -name "*rar" -execdir unrar x -idq -o- -p- '{}' \; -execdir rm '{}' \;
+ExecStartPost=find /home/paul/Downloads -name "_unpack" -prune , -iname "*.par2" -execdir rm '{}' \;
+ExecStartPost=find /home/paul/Downloads -name "_unpack" -prune , -iname "*.zip" -execdir rm '{}' \; 
+ExecStartPost=find /home/paul/Downloads -name "_unpack" -prune , -iname "*.rar"  -execdir rm '{}' \;
+#ExecStartPost=find /home/paul/Downloads -name "_unpack" -prune , -regextype posix-extended -regex ".*r[[:digit:]]{2}" -execdir '{}' \;
+ExecStartPost=find /home/paul/Downloads -name "_unpack" -prune , -regextype posix-extended -regex ".*r[[:digit:]]{2}" -execdir rm '{}' \;
+
+StandardOutput=journal
+StandardError=journal
+
+Nice=19
+#RemainAfterExit=false
+#ExecStart=/home/paul/bin/exdl
+#LogLevelMax=err
+#SyslogLevel=0
+#[Install]
+#WantedBy=default.target

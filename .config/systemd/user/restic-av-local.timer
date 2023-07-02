@@ -1,0 +1,16 @@
+[Unit]
+Description=Periodic backup of AV files to local restic repository.
+
+[Timer]
+#OnCalendar=*-*-3..30/3 08:15:00
+#OnCalendar=05:00:00
+OnCalendar=weekly
+RandomizedDelaySec=60m
+Persistent=true
+#OnUnitInactiveSec=48h
+#OnCalendar=Mon,Wed,Fri 05:15:00
+#OnStartupSec=48h
+#OnUnitInactiveSec=3d
+
+[Install]
+WantedBy=timers.target

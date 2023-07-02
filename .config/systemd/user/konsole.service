@@ -1,0 +1,11 @@
+[Unit]
+Description=Run konsole background
+StartLimitIntervalSec=1
+#StartLimitBurst=5
+
+[Service]
+ExecStart=/usr/bin/konsole --background-mode --profile Background
+Restart=always
+
+[Install]
+WantedBy=default.target

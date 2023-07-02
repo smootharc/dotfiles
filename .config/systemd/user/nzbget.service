@@ -1,0 +1,15 @@
+[Unit]
+Description=Download nzb files.
+StartLimitIntervalSec=10
+StartLimitBurst=5
+
+[Service]
+Type=forking
+ExecStart=/usr/bin/nzbget -D
+ExecStop=/usr/bin/nzbget -Q
+ExecReload=/usr/bin/nzbget -O
+KillMode=process
+Restart=on-failure
+
+[Install]
+WantedBy=default.target

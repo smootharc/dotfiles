@@ -1,0 +1,10 @@
+[Unit]
+Description=Sync AV files to synchost.
+
+[Service]
+Restart=on-failure
+RestartSec=10s
+Type=oneshot
+ExecStartPre=/usr/bin/sleep 1
+ExecStart=rsync -aP --delete /home/paul/Pictures /home/paul/Music /home/paul/XXX /home/paul/Videos ${SYNCHOST}::paul
+#ExecStart=systemd-inhibit rsync -aP --delete /home/paul/Pictures /home/paul/Music /home/paul/XXX /home/paul/Videos ${SYNCHOST}::paul

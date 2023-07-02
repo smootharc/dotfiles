@@ -1,0 +1,11 @@
+[Unit]
+Description=Extract zips and rars when /home/paul/Downloads is not empty.
+
+[Path]
+#DirectoryNotEmpty=/home/paul/Downloads
+#PathExistsGlob=/home/paul/Downloads/*
+PathChanged=/home/paul/Downloads
+Restart=on-failure
+
+[Install]
+WantedBy=paths.target

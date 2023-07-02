@@ -1,0 +1,10 @@
+[Unit]
+Description=Timer for restic forget of ts repository.
+
+[Timer]
+OnCalendar=Tue *-*-1..7
+RandomizedDelaySec=1h
+Persistent=true
+
+[Install]
+WantedBy=timers.target

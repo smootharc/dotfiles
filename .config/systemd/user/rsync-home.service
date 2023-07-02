@@ -1,0 +1,11 @@
+[Unit]
+Description=Synchronize /home/paul configuration files with rsynchost.
+StartLimitIntervalSec=60m
+StartLimitBurst=5
+
+[Service]
+Type=oneshot
+Restart=on-failure
+RestartSec=5m
+ExecStartPre=/usr/bin/sleep 1
+ExecStart=/home/paul/.local/bin/synchome ${SYNCHOST}
