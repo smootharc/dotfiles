@@ -1,5 +1,5 @@
 [Unit]
-Description=Extract zips and rars from ~/Downloads directory.
+Description=Extract zips and rars in the ~/Downloads directory.
 StartLimitIntervalSec=1m
 StartLimitBurst=100
 

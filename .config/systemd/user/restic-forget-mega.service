@@ -1,13 +1,13 @@
 [Unit]
 Description=Forget and prune mega restic repository.
 StartLimitIntervalSec=60m
-StartLimitBurst=5
+StartLimitBurst=60
 
 [Service]
 Type=oneshot
 Restart=on-failure
-RestartSec=5min
-ExecStartPre=restic rclone:mega:/restic unlock
+RestartSec=1min
+ExecStartPre=restic -r rclone:mega:/restic unlock
 ExecStart=restic -r rclone:mega:/restic forget --keep-within=1m
 ExecStart=systemd-inhibit restic -r rclone:mega:/restic --cleanup-cache prune
 ExecStartPost=systemd-inhibit restic -r rclone:mega:/restic check

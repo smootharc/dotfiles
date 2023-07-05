@@ -2,7 +2,8 @@
 Description=Daily sync to synchost.
 
 [Timer]
-OnCalendar=06:00
+#OnCalendar=06:00
+OnCalendar=daily
 RandomizedDelaySec=2h
 Persistent=True
 
