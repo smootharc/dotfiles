@@ -18,6 +18,7 @@ abbr -a -- hdu 'udisksctl unmount -b'
 abbr -a -- hds 'udisksctl status'
 abbr -a -- we 'curl wttr.in/08096'
 abbr -a -- wfs 'wf select'
+abbr -a -- skd 'for d in /dev/sd?; doas skdump $d; end | bat'
 set fzfkeys = "/usr/share/fzf/shell/key-bindings.fish"
 test -e "$fzfkeys" && source "$fzfkeys"
 bind \ct '__fzf_find_file'
