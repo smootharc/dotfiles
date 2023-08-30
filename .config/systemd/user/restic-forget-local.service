@@ -7,19 +7,6 @@ StartLimitBurst=5
 Type=oneshot
 Restart=on-failure
 RestartSec=5min
-
 ExecStartPre=restic unlock
-
-#ExecStartPre=restic forget --path=/home/paul -H 24 -d 14 
-
-#ExecStartPre=restic forget --path=/home/paul/Videos -w 8
-
-#ExecStartPost=systemd-inhibit restic check
-
-ExecStartPost=restic cache --cleanup
-
 ExecStart=restic forget --prune --keep-within=3m
-
-#ExecStartPre=systemctl --user stop restic-home-local.timer restic-av-local.timer
-
-#ExecStartPre=systemctl --user start restic-home-local.timer restic-av-local.timer
+ExecStartPost=restic cache --cleanup

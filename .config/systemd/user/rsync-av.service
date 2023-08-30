@@ -6,5 +6,5 @@ Restart=on-failure
 RestartSec=10s
 Type=oneshot
 ExecStartPre=/usr/bin/sleep 1
-ExecStart=rsync -aP --delete /home/paul/Pictures /home/paul/Music /home/paul/XXX /home/paul/Videos ${SYNCHOST}::paul
-#ExecStart=systemd-inhibit rsync -aP --delete /home/paul/Pictures /home/paul/Music /home/paul/XXX /home/paul/Videos ${SYNCHOST}::paul
+#ExecStart=rsync -aP --delete /home/paul/Pictures /home/paul/Music /home/paul/XXX /home/paul/Videos ${SYNCHOST}::paul
+ExecStart=systemd-inhibit rsync -aP --delete /home/paul/Music /home/paul/Videos /home/paul/Pictures ${SYNCHOST}::paul

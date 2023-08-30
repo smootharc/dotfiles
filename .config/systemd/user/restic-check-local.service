@@ -6,11 +6,11 @@ StartLimitBurst=5
 [Service]
 Type=oneshot
 Restart=on-failure
-RestartSec=1min
+RestartSec=2min
 
-#ExecStartPre=restic forget --path=/home/paul -H 24 -d 14 
-#ExecStartPre=restic forget --path=/home/paul/Videos -w 8
-#ExecStartPost=systemd-inhibit restic check
 ExecStartPre=restic unlock
-ExecStart=restic check
-ExecStartPost=restic cache --cleanup-cache
+#ExecStart=sleep 1 
+ExecStart=restic check --read-data
+ExecStartPost=restic cache --cleanup
+ExecStartPost=/bin/notify-send "Restic local repo check succeeded."
+#ExecStopPost=/bin/notify-send "Restic local repo check failed."
