@@ -5,6 +5,7 @@ StartLimitBurst=100
 
 [Service]
 Type=oneshot
+Restart=on-failure
 ExecStart=find /home/paul/Downloads -name "_unpack" -prune , -name "*par2" -not -name "*vol*par2" -execdir par2repair '{}' \;
 ExecStart=find /home/paul/Downloads -name "_unpack" -prune , -type f -name "*zip" -execdir unzip -o '{}' \;
 #ExecStart=find /home/paul/Downloads -name "_unpack" -prune , -type f -name "*zip" -execdir unzip -n -q '{}' \;

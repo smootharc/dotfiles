@@ -4,7 +4,7 @@ Description=Rsync of AV files to synchost.
 [Timer]
 #OnCalendar=Tue 06:00
 OnCalendar=weekly
-RandomizedDelaySec=6h
+RandomizedDelaySec=1h
 Persistent=true
 
 [Install]

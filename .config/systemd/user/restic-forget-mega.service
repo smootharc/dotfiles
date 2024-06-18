@@ -8,5 +8,4 @@ Type=oneshot
 Restart=on-failure
 RestartSec=1min
 ExecStartPre=restic -r rclone:mega:/restic unlock
-ExecStart=restic -r rclone:mega:/restic forget --keep-within=1m
-ExecStart=systemd-inhibit restic -r rclone:mega:/restic --cleanup-cache prune
+ExecStart=restic -r rclone:mega:/restic forget --keep-within=1m --prune --cleanup-cache

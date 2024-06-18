@@ -4,7 +4,7 @@ Description=Daily sync to synchost.
 [Timer]
 #OnCalendar=06:00
 OnCalendar=daily
-RandomizedDelaySec=2h
+RandomizedDelaySec=1h
 Persistent=True
 
 [Install]

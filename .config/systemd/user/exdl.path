@@ -7,8 +7,5 @@ PartOf=nzbget.service
 #PathExistsGlob=/home/paul/Downloads/*
 PathChanged=/home/paul/Downloads
 
-#[Service]
-#Restart=on-failure
-
 [Install]
 WantedBy=paths.target

@@ -2,7 +2,8 @@
 Description=Periodic backup of /home/paul to local repository.
 
 [Timer]
-OnCalendar=08..23/4:15
+#OnCalendar=08..23/2:15
+OnCalendar=00/1:15
 RandomizedDelaySec=30min
 #Persistent=true
 

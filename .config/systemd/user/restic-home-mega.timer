@@ -2,8 +2,8 @@
 Description=Periodic restic backup of /home/paul to mega.
 
 [Timer]
-OnCalendar=*-*-* 08:00:00
-RandomizedDelaySec=4h
+OnCalendar=*-*-* 02:00:00
+RandomizedDelaySec=1h
 Persistent=true
 
 [Install]
