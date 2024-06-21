@@ -9,7 +9,7 @@ fi
 pacman -Syyu
 
 while IFS= read -r package; do
-    paru -Sq --noconfirm --needed - "$package"
+    pacman -Sq --noconfirm --needed - "$package"
 done <<EOF
 bat
 btop
@@ -30,13 +30,14 @@ hddtemp
 hdparm
 helix
 htop
-imagewriter
 inxi
 iperf
+less
 lf
 libatasmart
 lsof
 lsscsi
+lxdm
 make
 mlocate
 moreutils
@@ -47,22 +48,23 @@ nushell
 nzbget
 opendoas
 p7zip
-#pamac-tray-icon-plasma
 par2cmdline
 parallel
 partclone
 patch
+pavucontrol
 perl-dbd-sqlite
 perl-file-mimeinfo
 perl-term-readline-gnu
 pkgfile
+pipewire
 poppler-glib
 python-click
 python-prompt_toolkit
 python-rich
 python-tabulate
 python-typer
-qterminal
+pulseaudio
 rclone
 restic
 rsync
@@ -73,14 +75,14 @@ time
 tk
 tmux
 unrar
-update-grub
-#ventoy
 vifm
 vim
 vivaldi
 vivaldi-ffmpeg-codecs
 wget
-xpdf
+xfce4
+xfce4-goodies
+xorg
 xsel
 zathura
 zathura-cb
@@ -106,7 +108,7 @@ systemctl enable sshd
 systemctl enable rsyncd
 systemctl enable cups
 systemctl enable fstrim.timer
-systemctl enable pkgfile-update.timer
+# systemctl enable pkgfile-update.timer
 systemctl enable smartd
 chsh -s /usr/bin/fish paul
 read -rt 60 -p "Type y to install modified grub configuration for the gigabyte board: "
@@ -121,4 +123,4 @@ sed -ie '/GRUB_TIMEOUT_STYLE/ s/hidden/menu/' /etc/default/grub
 sed -ie '/GRUB_COLOR_HIGHLIGHT=/ s/green/cyan/' /etc/default/grub
 sed -ie 's/^#GRUB_BACKGROUND=".*"$/GRUB_BACKGROUND=""/' /etc/default/grub
 sed -ie '/^GRUB_THEME/ s/^/#/p' /etc/default/grub
-update-grub
+grub-mkconfig -o /boot/grub/grub.cfg

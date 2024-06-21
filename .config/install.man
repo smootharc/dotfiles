@@ -37,6 +37,7 @@ lf
 libatasmart
 lsof
 lsscsi
+lxdm
 make
 mlocate
 moreutils
@@ -62,7 +63,6 @@ python-prompt_toolkit
 python-rich
 python-tabulate
 python-typer
-qterminal
 rclone
 restic
 smartmontools
@@ -79,7 +79,9 @@ vim
 vivaldi
 vivaldi-ffmpeg-codecs
 wget
-xpdf
+xfce4
+xfce4-goodies
+xorg
 xsel
 zathura
 zathura-cb
