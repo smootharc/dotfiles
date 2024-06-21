@@ -1,0 +1,124 @@
+#!/bin/bash
+
+#set -e
+
+if test "$(id -u)" -ne 0; then
+    exec sudo "$0"
+fi
+
+pacman -Syyu
+
+while IFS= read -r package; do
+    paru -Sq --noconfirm --needed - "$package"
+done <<EOF
+bat
+btop
+cups
+dateutils
+duf
+exa
+fakeroot
+fd
+fdupes
+feh
+firefox
+fish
+fzf
+gnucash
+gnucash-docs
+hddtemp
+hdparm
+helix
+htop
+imagewriter
+inxi
+iperf
+lf
+libatasmart
+lsof
+lsscsi
+make
+mlocate
+moreutils
+mpv
+ncdu
+neovim
+nushell
+nzbget
+opendoas
+p7zip
+#pamac-tray-icon-plasma
+par2cmdline
+parallel
+partclone
+patch
+perl-dbd-sqlite
+perl-file-mimeinfo
+perl-term-readline-gnu
+pkgfile
+poppler-glib
+python-click
+python-prompt_toolkit
+python-rich
+python-tabulate
+python-typer
+qterminal
+rclone
+restic
+rsync
+smartmontools
+system-config-printer
+tilix
+time
+tk
+tmux
+unrar
+update-grub
+#ventoy
+vifm
+vim
+vivaldi
+vivaldi-ffmpeg-codecs
+wget
+xpdf
+xsel
+zathura
+zathura-cb
+zathura-djvu
+zathura-pdf-poppler
+zathura-ps
+zoxide
+EOF
+cd "$(dirname "$(realpath "$0")")" || exit 1
+cp etc/20-wired.network /etc/systemd/network
+cp etc/10-libinput.conf /usr/share/X11/xorg.conf.d
+cp etc/70-u2f.rules /etc/udev/rules.d
+cp etc/90-mount.rules /etc/polkit-1/rules.d
+cp etc/doas.conf /etc
+cp etc/rsyncd.conf /etc
+cp etc/updatedb.conf /etc
+cp etc/cups-pdf.conf /etc/cups/
+localectl set-locale LC_TIME=en_GB.UTF-8 
+timedatectl set-ntp true
+systemctl enable NetworkManager
+# systemctl enable systemd-networkd
+systemctl enable sshd
+systemctl enable rsyncd
+systemctl enable cups
+systemctl enable fstrim.timer
+systemctl enable pkgfile-update.timer
+systemctl enable smartd
+chsh -s /usr/bin/fish paul
+read -rt 60 -p "Type y to install modified grub configuration for the gigabyte board: "
+if test "$REPLY" = "y"
+then
+    echo Installing modified grub
+    sed -ie '/GRUB_CMDLINE_LINUX=""/ s/""/"amd_iommu=on iommu=pt"/' /etc/default/grub
+else
+    echo
+fi
+sed -ie '/GRUB_TIMEOUT_STYLE/ s/hidden/menu/' /etc/default/grub
+sed -ie '/GRUB_COLOR_HIGHLIGHT=/ s/green/cyan/' /etc/default/grub
+sed -ie 's/^#GRUB_BACKGROUND=".*"$/GRUB_BACKGROUND=""/' /etc/default/grub
+sed -ie '/^GRUB_THEME/ s/^/#/p' /etc/default/grub
+update-grub

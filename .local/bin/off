@@ -1,0 +1,5 @@
+#!/bin/sh
+
+dose select off -b='2017-01-01' | awk NF
+# dose select off -b='2017-01-01' | perl -ne 'print if /\w/'
+# dose select off -b='2017-01-01 00:00' | sed '/^$/d'
