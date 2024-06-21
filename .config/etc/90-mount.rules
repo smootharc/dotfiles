@@ -1,0 +1,8 @@
+/* cp to /etc/polkit-1/rules.d to enable mounting without password prompt on debian */
+polkit.addRule(function(action, subject) {
+    if ((action.id == "org.freedesktop.udisks2.filesystem-mount-system" ||
+         action.id == "org.freedesktop.udisks2.filesystem-mount") &&
+        subject.isInGroup("wheel")) {
+        return polkit.Result.YES;
+    }
+});

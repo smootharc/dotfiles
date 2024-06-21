@@ -1,0 +1,8 @@
+#!/bin/sh
+# Requires executable bit
+# /etc/grub.d/99_paul_theme
+# and run `sudo update-grub`
+echo "set menu_color_normal=dark-gray/black"
+echo "set menu_color_highlight=cyan/black"
+echo "set color_normal=light-white/black"
+echo "set color_highlight=black/white"
