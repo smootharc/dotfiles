@@ -1,0 +1,37 @@
+theme = "base16_default_dark"
+
+[editor]
+bufferline = "multiple"
+true-color = true
+scrolloff = 2
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[editor.lsp]
+enable = true
+
+[keys.normal]
+#C-j = ["open_below", "normal_mode", "keep_primary_selection"]
+#C-k = ["open_above", "normal_mode", "keep_primary_selection"]
+C-down = ["extend_to_line_bounds", "delete_selection", "paste_after"]
+C-up = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+A-j = "scroll_down"
+A-k = "scroll_up"
+F1 = ":set whitespace.render none"
+F2 = ":set whitespace.render all"
+
+[keys.insert]
+up = "no_op"
+down = "no_op"
+left = "no_op"
+right = "no_op"
+pageup = "no_op"
+pagedown = "no_op"
+home = "no_op"
+end = "no_op"

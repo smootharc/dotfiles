@@ -1,0 +1,66 @@
+# nimlangserver = { command = "nimlangserver" }
+# vlang-language-server = { command = "v-analyzer" }
+# perlnavigator = { command = "perlnavigator", args= ["--stdio"] }
+# pylsp = { command = "pylsp" }
+
+# [[language]]
+# name = "nim"
+# scope = "source.nim"
+# injection-regex = "nim"
+# file-types = ["nim", "nims", "nimble"]
+# shebangs = []
+# comment-token = "#"
+# indent = { tab-width = 2, unit = "  " }
+# language-servers = [ "nimlangserver" ]
+
+# [language.auto-pairs]
+# '(' = ')'
+# '[' = ']'
+# '"' = '"'
+# "'" = "'"
+# '{' = '}'
+
+# # Nim's tree-sitter grammar is in heavy development.
+# [[grammar]]
+# name = "nim"
+# source = { git = "https://github.com/aMOPel/tree-sitter-nim", rev = "240239b232550e431d67de250d1b5856209e7f06" }
+
+# [[language]]
+# name = "v"
+# scope = "source.v"
+# file-types = ["v", "vv", "vsh"]
+# shebangs = ["v run"]
+# roots = ["v.mod"]
+# language-servers = [ "vlang-language-server" ]
+# auto-format = true
+# comment-token = "//"
+# indent = { tab-width = 4, unit = "\t" }
+
+# [[language]]
+# name = "perl"
+# scope = "source.perl"
+# file-types = ["pl", "pm", "t", "psgi", "raku", "rakumod", "rakutest", "rakudoc", "nqp", "p6", "pl6", "pm6"]
+# shebangs = ["perl"]
+# comment-token = "#"
+# language-servers = [ "perlnavigator" ]
+# indent = { tab-width = 2, unit = "  " }
+
+# [[grammar]]
+# name = "perl"
+# source = { git = "https://github.com/tree-sitter-perl/tree-sitter-perl", rev = "e99bb5283805db4cb86c964722d709df21b0ac16" }
+
+# # [[language]]
+# # name = "python"
+# # scope = "source.python"
+# # injection-regex = "py(thon)?"
+# # file-types = ["py", "pyi", "py3", "pyw", "ptl", "rpy", "cpy", "ipy", "pyt", { glob = ".python_history" }, { glob = ".pythonstartup" }, { glob = ".pythonrc" }, { glob = "SConstruct" }, { glob = "SConscript" }]
+# # shebangs = ["python"]
+# # roots = ["pyproject.toml", "setup.py", "poetry.lock", "pyrightconfig.json"]
+# # comment-token = "#"
+# # language-servers = [ "pylsp" ]
+# # # TODO: pyls needs utf-8 offsets
+# # indent = { tab-width = 4, unit = "    " }
+
+# # [[grammar]]
+# # name = "python"
+# # source = { git = "https://github.com/tree-sitter/tree-sitter-python", rev = "4bfdd9033a2225cc95032ce77066b7aeca9e2efc" }
