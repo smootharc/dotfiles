@@ -35,6 +35,8 @@ iperf
 less
 lf
 libatasmart
+lightdm-gtk-greeter
+lightdm-gtk-greeter-settings
 lsof
 lsscsi
 lxdm
