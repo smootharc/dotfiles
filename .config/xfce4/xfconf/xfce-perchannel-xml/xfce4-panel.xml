@@ -97,12 +97,12 @@
         <value type="string" value="xfce4-terminal-emulator.desktop"/>
       </property>
       <property name="recent" type="array">
+        <value type="string" value="ventoy.desktop"/>
+        <value type="string" value="imagewriter.desktop"/>
         <value type="string" value="virt-manager.desktop"/>
         <value type="string" value="btop.desktop"/>
         <value type="string" value="manjaro-settings-manager.desktop"/>
-        <value type="string" value="ventoy.desktop"/>
         <value type="string" value="simple-scan.desktop"/>
-        <value type="string" value="imagewriter.desktop"/>
         <value type="string" value="org.xfce.mousepad.desktop"/>
         <value type="string" value="xfce-mouse-settings.desktop"/>
         <value type="string" value="org.xfce.ristretto.desktop"/>
