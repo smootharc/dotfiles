@@ -43,7 +43,6 @@ mlocate
 moreutils
 mpv
 ncdu
-neovim
 nushell
 nzbget
 opendoas
@@ -79,6 +78,8 @@ vim
 vivaldi
 vivaldi-ffmpeg-codecs
 wget
+xdg-user-dirs
+xdg-utils
 xfce4
 xfce4-goodies
 xorg

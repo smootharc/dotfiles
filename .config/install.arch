@@ -17,6 +17,7 @@ cups
 dateutils
 duf
 exa
+f2fs-tools
 fakeroot
 fd
 fdupes
@@ -49,6 +50,7 @@ neovim
 nushell
 nzbget
 opendoas
+openssh
 p7zip
 par2cmdline
 parallel
@@ -58,15 +60,15 @@ pavucontrol
 perl-dbd-sqlite
 perl-file-mimeinfo
 perl-term-readline-gnu
-pkgfile
 pipewire
+pkgfile
 poppler-glib
+pulseaudio
 python-click
 python-prompt_toolkit
 python-rich
 python-tabulate
 python-typer
-pulseaudio
 rclone
 restic
 rsync
@@ -84,6 +86,7 @@ vivaldi-ffmpeg-codecs
 wget
 xfce4
 xfce4-goodies
+xfsprogs
 xorg
 xsel
 zathura
