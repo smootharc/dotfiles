@@ -43,6 +43,7 @@ mlocate
 moreutils
 mpv
 ncdu
+nim
 nushell
 nzbget
 opendoas

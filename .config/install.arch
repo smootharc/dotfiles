@@ -105,6 +105,7 @@ cp etc/doas.conf /etc
 cp etc/rsyncd.conf /etc
 cp etc/updatedb.conf /etc
 cp etc/cups-pdf.conf /etc/cups/
+localectl set-local en_US.UTF-8
 localectl set-locale LC_TIME=en_GB.UTF-8 
 timedatectl set-ntp true
 systemctl enable NetworkManager
@@ -113,6 +114,7 @@ systemctl enable sshd
 systemctl enable rsyncd
 systemctl enable cups
 systemctl enable fstrim.timer
+systemctl enable lightdm
 # systemctl enable pkgfile-update.timer
 systemctl enable smartd
 chsh -s /usr/bin/fish paul

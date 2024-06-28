@@ -35,7 +35,6 @@
       <property name="position-locked" type="bool" value="true"/>
       <property name="size" type="uint" value="48"/>
       <property name="plugin-ids" type="array">
-        <value type="int" value="7"/>
         <value type="int" value="1"/>
         <value type="int" value="6"/>
         <value type="int" value="20"/>
@@ -97,16 +96,14 @@
         <value type="string" value="xfce4-terminal-emulator.desktop"/>
       </property>
       <property name="recent" type="array">
-        <value type="string" value="ventoy.desktop"/>
-        <value type="string" value="imagewriter.desktop"/>
-        <value type="string" value="virt-manager.desktop"/>
-        <value type="string" value="btop.desktop"/>
+        <value type="string" value="xfce-keyboard-settings.desktop"/>
+        <value type="string" value="xfce-session-settings.desktop"/>
+        <value type="string" value="xfce4-mime-settings.desktop"/>
+        <value type="string" value="xfce4-terminal.desktop"/>
+        <value type="string" value="xfce4-terminal-emulator.desktop"/>
         <value type="string" value="manjaro-settings-manager.desktop"/>
-        <value type="string" value="simple-scan.desktop"/>
         <value type="string" value="org.xfce.mousepad.desktop"/>
         <value type="string" value="xfce-mouse-settings.desktop"/>
-        <value type="string" value="org.xfce.ristretto.desktop"/>
-        <value type="string" value="org.gnome.Evince.desktop"/>
       </property>
     </property>
     <property name="plugin-25" type="string" value="systray">
@@ -171,11 +168,6 @@
       </property>
     </property>
     <property name="plugin-5" type="string" value="xfce4-clipman-plugin"/>
-    <property name="plugin-7" type="string" value="launcher">
-      <property name="items" type="array">
-        <value type="string" value="17053826671.desktop"/>
-      </property>
-    </property>
     <property name="plugin-15" type="string" value="launcher">
       <property name="items" type="array">
         <value type="string" value="17157827371.desktop"/>
