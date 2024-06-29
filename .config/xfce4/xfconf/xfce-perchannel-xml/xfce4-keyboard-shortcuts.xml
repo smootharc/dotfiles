@@ -62,8 +62,8 @@
       <property name="&lt;Primary&gt;Escape" type="string" value="xfce4-taskmanager"/>
       <property name="Scroll_Lock" type="string" value="xfce4-screensaver-command -l"/>
       <property name="&lt;Primary&gt;Super_L" type="string" value="xfce4-popup-whiskermenu"/>
-      <property name="&lt;Primary&gt;&lt;Alt&gt;Return" type="string" value="tilix"/>
-      <property name="F12" type="string" value="tilix -q"/>
+      <property name="&lt;Primary&gt;&lt;Alt&gt;Return" type="string" value="xfce4-terminal"/>
+      <property name="F12" type="string" value="xfce4-terminal --drop-down"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">

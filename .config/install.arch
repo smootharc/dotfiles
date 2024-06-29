@@ -27,6 +27,7 @@ fish
 fzf
 gnucash
 gnucash-docs
+gvfs
 hddtemp
 hdparm
 helix
@@ -63,7 +64,7 @@ perl-term-readline-gnu
 pipewire
 pkgfile
 poppler-glib
-pulseaudio
+pipewire-pulse
 python-click
 python-prompt_toolkit
 python-rich
@@ -78,6 +79,7 @@ tilix
 time
 tk
 tmux
+udisks2
 unrar
 vifm
 vim

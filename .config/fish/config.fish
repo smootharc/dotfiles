@@ -1,6 +1,6 @@
 bind \ct __fzf_find_file
 abbr -a -- ef 'exec fish'
-abbr -a -- tree 'tree -n'
+abbr -a -- tree 'eza --tree'
 abbr -a -- hx helix
 abbr -a --position anywhere -- sc systemctl
 abbr -a -- scu 'systemctl --user'

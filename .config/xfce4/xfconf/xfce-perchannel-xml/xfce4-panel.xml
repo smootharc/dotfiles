@@ -21,7 +21,6 @@
         <value type="int" value="5"/>
         <value type="int" value="9"/>
         <value type="int" value="8"/>
-        <value type="int" value="25"/>
         <value type="int" value="11"/>
         <value type="int" value="12"/>
         <value type="int" value="13"/>
@@ -72,6 +71,7 @@
       <property name="digital-time-font" type="string" value="Sans 10"/>
       <property name="digital-layout" type="uint" value="1"/>
       <property name="digital-date-format" type="string" value="%A, %Y-%m-%d"/>
+      <property name="digital-time-format" type="string" value="%T"/>
     </property>
     <property name="plugin-13" type="string" value="separator">
       <property name="style" type="uint" value="0"/>
@@ -96,56 +96,16 @@
         <value type="string" value="xfce4-terminal-emulator.desktop"/>
       </property>
       <property name="recent" type="array">
-        <value type="string" value="system-config-printer.desktop"/>
-        <value type="string" value="lightdm-gtk-greeter-settings.desktop"/>
-        <value type="string" value="xfce4-mime-settings.desktop"/>
-        <value type="string" value="xfce-keyboard-settings.desktop"/>
         <value type="string" value="xfce-session-settings.desktop"/>
+        <value type="string" value="xfce-keyboard-settings.desktop"/>
         <value type="string" value="xfce4-terminal.desktop"/>
+        <value type="string" value="thunar-volman-settings.desktop"/>
+        <value type="string" value="xfce-ui-settings.desktop"/>
+        <value type="string" value="lightdm-gtk-greeter-settings.desktop"/>
+        <value type="string" value="system-config-printer.desktop"/>
+        <value type="string" value="xfce4-mime-settings.desktop"/>
         <value type="string" value="xfce4-terminal-emulator.desktop"/>
         <value type="string" value="org.xfce.mousepad.desktop"/>
-        <value type="string" value="xfce-mouse-settings.desktop"/>
-      </property>
-    </property>
-    <property name="plugin-25" type="string" value="systray">
-      <property name="known-legacy-items" type="array">
-        <value type="string" value="no network connection"/>
-        <value type="string" value="requesting an ethernet network address for “wired connection 1”…"/>
-        <value type="string" value="system-config-printer"/>
-        <value type="string" value="pamac-tray"/>
-        <value type="string" value="ethernet network connection “wired connection 1” active"/>
-        <value type="string" value="clipman"/>
-        <value type="string" value="drop-down terminal"/>
-        <value type="string" value="networkmanager applet"/>
-        <value type="string" value="requesting an ethernet network address for “enp3s0”…"/>
-        <value type="string" value="xfce terminal"/>
-        <value type="string" value="networking disabled"/>
-        <value type="string" value="ethernet network connection “enp3s0” active"/>
-      </property>
-      <property name="known-items" type="array">
-        <value type="string" value="vlc"/>
-        <value type="string" value="chrome_status_icon_19"/>
-        <value type="string" value="chrome_status_icon_18"/>
-        <value type="string" value="chrome_status_icon_17"/>
-        <value type="string" value="chrome_status_icon_16"/>
-        <value type="string" value="chrome_status_icon_15"/>
-        <value type="string" value="chrome_status_icon_14"/>
-        <value type="string" value="chrome_status_icon_13"/>
-        <value type="string" value="chrome_status_icon_12"/>
-        <value type="string" value="chrome_status_icon_11"/>
-        <value type="string" value="chrome_status_icon_10"/>
-        <value type="string" value="chrome_status_icon_9"/>
-        <value type="string" value="chrome_status_icon_8"/>
-        <value type="string" value="chrome_status_icon_7"/>
-        <value type="string" value="chrome_status_icon_6"/>
-        <value type="string" value="chrome_status_icon_5"/>
-        <value type="string" value="chrome_status_icon_4"/>
-        <value type="string" value="chrome_status_icon_3"/>
-        <value type="string" value="chrome_status_icon_2"/>
-        <value type="string" value="chrome_status_icon_1"/>
-        <value type="string" value="dnfdragora-updater"/>
-      </property>
-      <property name="hidden-items" type="array">
       </property>
     </property>
     <property name="plugin-1" type="string" value="launcher">
