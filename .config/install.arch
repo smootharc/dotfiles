@@ -105,9 +105,10 @@ cp etc/doas.conf /etc
 cp etc/rsyncd.conf /etc
 cp etc/updatedb.conf /etc
 cp etc/cups-pdf.conf /etc/cups/
-localectl set-local en_US.UTF-8
+localectl set-locale en_US.UTF-8
 localectl set-locale LC_TIME=en_GB.UTF-8 
 timedatectl set-ntp true
+timedatectl set-timezone America/New_York
 systemctl enable NetworkManager
 # systemctl enable systemd-networkd
 systemctl enable sshd

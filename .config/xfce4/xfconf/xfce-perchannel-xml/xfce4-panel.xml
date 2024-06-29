@@ -96,12 +96,13 @@
         <value type="string" value="xfce4-terminal-emulator.desktop"/>
       </property>
       <property name="recent" type="array">
+        <value type="string" value="system-config-printer.desktop"/>
+        <value type="string" value="lightdm-gtk-greeter-settings.desktop"/>
+        <value type="string" value="xfce4-mime-settings.desktop"/>
         <value type="string" value="xfce-keyboard-settings.desktop"/>
         <value type="string" value="xfce-session-settings.desktop"/>
-        <value type="string" value="xfce4-mime-settings.desktop"/>
         <value type="string" value="xfce4-terminal.desktop"/>
         <value type="string" value="xfce4-terminal-emulator.desktop"/>
-        <value type="string" value="manjaro-settings-manager.desktop"/>
         <value type="string" value="org.xfce.mousepad.desktop"/>
         <value type="string" value="xfce-mouse-settings.desktop"/>
       </property>
