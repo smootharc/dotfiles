@@ -18,7 +18,6 @@
         <value type="int" value="2"/>
         <value type="int" value="3"/>
         <value type="int" value="10"/>
-        <value type="int" value="5"/>
         <value type="int" value="9"/>
         <value type="int" value="8"/>
         <value type="int" value="11"/>
@@ -128,7 +127,6 @@
         <property name="never-confirm-history-clear" type="bool" value="false"/>
       </property>
     </property>
-    <property name="plugin-5" type="string" value="xfce4-clipman-plugin"/>
     <property name="plugin-15" type="string" value="launcher">
       <property name="items" type="array">
         <value type="string" value="17157827371.desktop"/>
