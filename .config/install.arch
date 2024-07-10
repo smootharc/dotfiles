@@ -11,6 +11,7 @@ pacman -Syyu
 while IFS= read -r package; do
     pacman -Sq --noconfirm --needed - "$package"
 done <<EOF
+archlinux-contrib
 bat
 btop
 cups
@@ -53,6 +54,7 @@ nzbget
 opendoas
 openssh
 p7zip
+pacman-contrib
 par2cmdline
 parallel
 partclone
@@ -62,9 +64,9 @@ perl-dbd-sqlite
 perl-file-mimeinfo
 perl-term-readline-gnu
 pipewire
+pipewire-pulse
 pkgfile
 poppler-glib
-pipewire-pulse
 python-click
 python-prompt_toolkit
 python-rich
@@ -86,6 +88,7 @@ vim
 vivaldi
 vivaldi-ffmpeg-codecs
 wget
+xdg-utils
 xfce4
 xfce4-goodies
 xfsprogs
@@ -99,25 +102,26 @@ zathura-ps
 zoxide
 EOF
 cd "$(dirname "$(realpath "$0")")" || exit 1
-cp etc/20-wired.network /etc/systemd/network
 cp etc/10-libinput.conf /usr/share/X11/xorg.conf.d
+cp etc/20-wired.network /etc/systemd/network
 cp etc/70-u2f.rules /etc/udev/rules.d
 cp etc/90-mount.rules /etc/polkit-1/rules.d
+cp etc/cups-pdf.conf /etc/cups/
 cp etc/doas.conf /etc
 cp etc/rsyncd.conf /etc
 cp etc/updatedb.conf /etc
-cp etc/cups-pdf.conf /etc/cups/
 localectl set-locale en_US.UTF-8
 localectl set-locale LC_TIME=en_GB.UTF-8 
 timedatectl set-ntp true
 timedatectl set-timezone America/New_York
-systemctl enable NetworkManager
-# systemctl enable systemd-networkd
-systemctl enable sshd
-systemctl enable rsyncd
+# systemctl enable NetworkManager
+systemctl enable systemd-networkd
 systemctl enable cups
 systemctl enable fstrim.timer
 systemctl enable lightdm
+systemctl enable pkgfile-update.timer
+systemctl enable rsyncd
+systemctl enable sshd
 # systemctl enable pkgfile-update.timer
 systemctl enable smartd
 chsh -s /usr/bin/fish paul

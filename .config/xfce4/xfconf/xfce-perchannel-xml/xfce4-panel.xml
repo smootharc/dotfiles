@@ -21,6 +21,7 @@
         <value type="int" value="9"/>
         <value type="int" value="8"/>
         <value type="int" value="11"/>
+        <value type="int" value="5"/>
         <value type="int" value="12"/>
         <value type="int" value="13"/>
         <value type="int" value="14"/>
@@ -96,15 +97,14 @@
       </property>
       <property name="recent" type="array">
         <value type="string" value="xfce-session-settings.desktop"/>
+        <value type="string" value="simple-scan.desktop"/>
+        <value type="string" value="org.pwmt.zathura.desktop"/>
+        <value type="string" value="org.xfce.ristretto.desktop"/>
+        <value type="string" value="system-config-printer.desktop"/>
+        <value type="string" value="btop.desktop"/>
         <value type="string" value="xfce-keyboard-settings.desktop"/>
         <value type="string" value="xfce4-terminal.desktop"/>
         <value type="string" value="thunar-volman-settings.desktop"/>
-        <value type="string" value="xfce-ui-settings.desktop"/>
-        <value type="string" value="lightdm-gtk-greeter-settings.desktop"/>
-        <value type="string" value="system-config-printer.desktop"/>
-        <value type="string" value="xfce4-mime-settings.desktop"/>
-        <value type="string" value="xfce4-terminal-emulator.desktop"/>
-        <value type="string" value="org.xfce.mousepad.desktop"/>
       </property>
     </property>
     <property name="plugin-1" type="string" value="launcher">
@@ -130,6 +130,13 @@
     <property name="plugin-15" type="string" value="launcher">
       <property name="items" type="array">
         <value type="string" value="17157827371.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-5" type="string" value="systray">
+      <property name="known-legacy-items" type="array">
+        <value type="string" value="system-config-printer"/>
+        <value type="string" value="xfce terminal"/>
+        <value type="string" value="drop-down terminal"/>
       </property>
     </property>
   </property>

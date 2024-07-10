@@ -1,4 +1,4 @@
-bind \ct __fzf_find_file
+# bind \ct __fzf_find_file
 abbr -a -- ef 'exec fish'
 abbr -a -- tree 'eza --tree'
 abbr -a -- hx helix
@@ -18,7 +18,7 @@ abbr -a -- wfs 'wf select'
 abbr -a -- skd 'for d in /dev/sd?; doas skdump $d; end | /usr/bin/less -p dev/sd'
 abbr -a -- avp 'rclone sync ~ /backup/avp --filter-from ~/.config/rclone/avp.fil -P'
 abbr -a -- pics 'feh &> /dev/null (fd . ~/Pictures -t f | fzf -m) &'
-abbr -a -- docs 'zathura (fd . -e pdf -e ps -t f ~ | fzf -m || exit ) &'
+# abbr -a -- docs 'zathura (fd . -e pdf -e ps -t f ~ | fzf -m || exit ) &'
 # abbr -a -- docs 'zathura (find ~ -iname "*.pdf" -o -iname "*.ps" | fzf -m || exit ) & '
 abbr -a -- bur 'test -d ~/media/backup && rclone sync /backup/restic ~/media/backup/restic -P && umount ~/media/backup'
 history merge
