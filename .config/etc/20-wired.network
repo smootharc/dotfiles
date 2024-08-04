@@ -1,6 +1,0 @@
-#copy to /etc/systemd/network
-[Match]
-Name=en*
-
-[Network]
-DHCP=yes

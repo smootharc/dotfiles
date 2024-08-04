@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#set -e
+set -e
 
 if test "$(id -u)" -ne 0; then
     exec sudo "$0"
@@ -8,9 +8,10 @@ fi
 
 pacman -Syyu
 
-while IFS= read -r package; do
-    pacman -Sq --noconfirm --needed - "$package"
-done <<EOF
+# while IFS= read -r package; do
+#     pacman -Sq --noconfirm --needed - "$package"
+# done <<EOF
+echo '
 archlinux-contrib
 bat
 btop
@@ -48,7 +49,6 @@ mlocate
 moreutils
 mpv
 ncdu
-neovim
 nushell
 nzbget
 opendoas
@@ -88,6 +88,7 @@ vim
 vivaldi
 vivaldi-ffmpeg-codecs
 wget
+xdg-user-dirs
 xdg-utils
 xfce4
 xfce4-goodies
@@ -99,11 +100,10 @@ zathura-cb
 zathura-djvu
 zathura-pdf-poppler
 zathura-ps
-zoxide
-EOF
+zoxide' | pacman -Sq --noconfirm --needed -
 cd "$(dirname "$(realpath "$0")")" || exit 1
 cp etc/10-libinput.conf /usr/share/X11/xorg.conf.d
-cp etc/20-wired.network /etc/systemd/network
+# cp etc/20-wired.network /etc/systemd/network
 cp etc/70-u2f.rules /etc/udev/rules.d
 cp etc/90-mount.rules /etc/polkit-1/rules.d
 cp etc/cups-pdf.conf /etc/cups/
@@ -122,9 +122,14 @@ systemctl enable lightdm
 systemctl enable pkgfile-update.timer
 systemctl enable rsyncd
 systemctl enable sshd
-# systemctl enable pkgfile-update.timer
+systemctl enable pkgfile-update.timer
 systemctl enable smartd
+chfs -f 'Paul A. Medeiros' paul
 chsh -s /usr/bin/fish paul
+if test -d /backup
+then
+    chown paul:wheel /backup
+fi
 read -rt 60 -p "Type y to install modified grub configuration for the gigabyte board: "
 if test "$REPLY" = "y"
 then

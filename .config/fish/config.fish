@@ -4,12 +4,11 @@ abbr -a -- tree 'eza --tree'
 abbr -a -- hx helix
 abbr -a --position anywhere -- sc systemctl
 abbr -a -- scu 'systemctl --user'
-abbr -a -- frl 'source ~/.config/fish/config.fish'
 abbr -a -- jc journalctl
 abbr -a -- jcu 'journalctl --user'
 abbr -a -- rs 'restic snapshots | bat'
 abbr -a -- rll 'restic ls latest &| less'
-abbr -a -- hdf 'df -hT -x efivarfs -x tmpfs -x devtmpfs'
+# abbr -a -- hdf 'df -hT -x efivarfs -x tmpfs -x devtmpfs'
 abbr -a -- hdm 'udisksctl mount -b'
 abbr -a -- hdu 'udisksctl unmount -b'
 abbr -a -- hds 'udisksctl status'
