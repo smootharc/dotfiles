@@ -176,7 +176,7 @@ fileviewer *.[1-8] man ./%c | col -b
 " Images
 filextype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm,*.webp
         \ {View in feh}
-        \ fehd %"f &,
+        \ feh %"f &,
         \ {View in gpicview}
         \ gpicview %c,
         \ {View in shotwell}
@@ -422,7 +422,7 @@ nnoremap <F1> :help<cr>
 nnoremap <F9> :redraw<cr>
 nnoremap <c-h> :hideui<cr>
 nnoremap <c-t> :tree!<cr>
-nnoremap <c-v> :vd -s=a %f<cr>
+nnoremap <c-v> :vd -s=a %f &<cr>
 nnoremap <delete> :delete!<cr>
 "nnoremap <space> t<down>
 "nnoremap <tab> <c-w>p

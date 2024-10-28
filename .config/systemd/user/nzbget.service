@@ -6,9 +6,9 @@ StartLimitBurst=5
 
 [Service]
 Type=forking
-ExecStart=/usr/bin/nzbget -D -c /home/paul/.config/nzbget.conf
-ExecStop=/usr/bin/nzbget -Q
-ExecReload=/usr/bin/nzbget -O -c /home/paul/.config/nzbget.conf
+ExecStart=/usr/local/bin/nzbget -D -c /home/paul/.config/nzbget.conf
+ExecStop=/usr/local/bin/nzbget -Q
+ExecReload=/usr/local/bin/nzbget -O -c /home/paul/.config/nzbget.conf
 #ExecStart=/opt/nzbget/nzbget -D -c /home/paul/.config/nzbget.conf
 #ExecStop=/opt/nzbget/nzbget -Q 
 #ExecReload=/opt/nzbget/nzbget -O -c /home/paul/.config/nzbget.conf 

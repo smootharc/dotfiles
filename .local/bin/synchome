@@ -2,7 +2,7 @@
 
 function help {
 
-    echo "Usage: $(basename $0) [sshservername|directory]"
+    echo "Usage: $(basename $0) sshservername"
     
 }
 
@@ -16,11 +16,23 @@ fi
 
 if ssh -q $1 sh -c 'exit'; then
 
-    if rsync -HaPr --delete --timeout=60 --exclude-from ~/.config/rsync/exclude-home --files-from ~/.config/rsync/from-home ~ "$1:"; then
+#    if rsync -HaPr --delete --delete-excluded --timeout=60 --exclude-from ~/.config/rsync/exclude-home --files-from ~/.config/rsync/from-home ~/ "$1:"; then
+    if rsync -HaPr --timeout=60 --exclude-from ~/.config/rsync/exclude-home ~/ "$1:"; then
 
         ssh $1 chmod 640 ~/.local/bin/dose ~/.local/bin/wf ~/.local/bin/bp        
 
-        exit 0
+        if rsync -HaPr -q --delete --delete-excluded --exclude-from ~/.config/rsync/exclude-home ~/ /backup/home
+        then
+
+            exit 0
+
+        else
+
+            echo "Command synchome to /backup/home failed."
+
+            exit 1
+
+        fi
 
     else
 
@@ -28,30 +40,21 @@ if ssh -q $1 sh -c 'exit'; then
 
     fi
 
-fi
-
-
-# if [ "$1" = "${1#/}" ]; then
-# dirname=$(dirname $1)
-
-# if ! test -w $dirname; then
-
-#     # echo -e "\nError: target directory '$1' must be an absolute path.\n" &> /dev/stderr
-#     echo -e "\nError: target directory '$dirname' is not writeable.\n" &> /dev/stderr
-
-#     help
-
-#     exit 1
-
-# fi
-
- 
-if rsync -HaPr --delete --timeout=60 --exclude-from ~/.config/rsync/exclude-home --files-from ~/.config/rsync/from-home ~ "$1"; then
-
-    exit 0
-
 else
+
+    echo "Command synchome to hostname $1 failed."
 
     exit 1
 
 fi
+ 
+#if rsync -HaPr --delete --delete-excluded --timeout=60 --exclude-from ~/.config/rsync/exclude-home --files-from ~/.config/rsync/from-home ~/ "$1"; then
+# if rsync -HaPr --delete --exclude-from ~/.config/rsync/exclude-home ~ "$1"; then
+
+#     exit 0
+
+# else
+
+#     exit 1
+
+# fi

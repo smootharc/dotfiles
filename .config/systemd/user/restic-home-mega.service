@@ -8,5 +8,4 @@ Type=oneshot
 Restart=on-failure
 RestartSec=1m
 ExecStart=restic -r rclone:mega:/restic --exclude-file /home/paul/.config/restic/exclude-home backup /home/paul
-ExecStartPost=/home/paul/.local/bin/synchome /backup/home
 ExecStartPost=/bin/rclone sync /backup/home mega:/home -L

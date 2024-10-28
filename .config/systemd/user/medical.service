@@ -1,14 +1,14 @@
 [Unit]
-Description=Rsync medical.db to synchome after changes.
-StartLimitIntervalSec=10m
-StartLimitBurst=10
+Description=Rsync medical.db to synchost after changes.
+StartLimitIntervalSec=30m
+StartLimitBurst=30
 
 [Service]
 Type=oneshot
 Restart=on-failure
-RestartSec=1m
+RestartSec=5s
 ExecStartPre=sh -c "sqlite3 -batch /home/paul/.local/share/medical.db .dump > /home/paul/.config/medical.dump.sql"
-ExecStart=rsync /home/paul/.local/share/medical.db /home/paul/projects/.local/share/medical.db
-ExecStartPost=rsync --contimeout=5 /home/paul/.local/share/medical.db ${SYNCHOST}::paul/.local/share/medical.db
+ExecStartPre=rsync -P /home/paul/.local/share/medical.db /home/paul/projects/.local/share/medical.db
+ExecStart=rsync -P --contimeout=5 /home/paul/.local/share/medical.db ${SYNCHOST}::paul/.local/share/medical.db
 #ExecStartPost=notify-send "Medical Service." "Successfully transfered medical.db to ${SYNCHOST}"
 Nice=19

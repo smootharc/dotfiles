@@ -1,16 +1,14 @@
-#!/bin/bash
+#!/bin/env bash
 
 set -e
 
-if test "$(id -u)" -ne 0; then
+if test "$EUID" -ne 0
+then
     exec sudo "$0"
 fi
 
-pacman -Syyu
+pacman -Syyu --noconfirm
 
-# while IFS= read -r package; do
-#     pacman -Sq --noconfirm --needed - "$package"
-# done <<EOF
 echo '
 archlinux-contrib
 bat
@@ -18,7 +16,7 @@ btop
 cups
 dateutils
 duf
-exa
+eza
 f2fs-tools
 fakeroot
 fd
@@ -49,8 +47,8 @@ mlocate
 moreutils
 mpv
 ncdu
+nim
 nushell
-nzbget
 opendoas
 openssh
 p7zip
@@ -90,8 +88,6 @@ vivaldi-ffmpeg-codecs
 wget
 xdg-user-dirs
 xdg-utils
-xfce4
-xfce4-goodies
 xfsprogs
 xorg
 xsel
@@ -100,46 +96,86 @@ zathura-cb
 zathura-djvu
 zathura-pdf-poppler
 zathura-ps
-zoxide' | pacman -Sq --noconfirm --needed -
+zoxide
+' | pacman -Sq --noconfirm --needed -
+
 cd "$(dirname "$(realpath "$0")")" || exit 1
+
 cp etc/10-libinput.conf /usr/share/X11/xorg.conf.d
-# cp etc/20-wired.network /etc/systemd/network
+
+cp etc/20-ethernet.network /etc/systemd/network
+
 cp etc/70-u2f.rules /etc/udev/rules.d
+
 cp etc/90-mount.rules /etc/polkit-1/rules.d
+
 cp etc/cups-pdf.conf /etc/cups/
+
 cp etc/doas.conf /etc
+
 cp etc/rsyncd.conf /etc
+
 cp etc/updatedb.conf /etc
+
 localectl set-locale en_US.UTF-8
-localectl set-locale LC_TIME=en_GB.UTF-8 
+
+localectl set-locale LC_TIME=en_GB.UTF-8
+
 timedatectl set-ntp true
+
 timedatectl set-timezone America/New_York
+
 # systemctl enable NetworkManager
 systemctl enable systemd-networkd
+
 systemctl enable cups
+
 systemctl enable fstrim.timer
+
 systemctl enable lightdm
+
 systemctl enable pkgfile-update.timer
+
 systemctl enable rsyncd
+
 systemctl enable sshd
+
 systemctl enable pkgfile-update.timer
+
 systemctl enable smartd
-chfs -f 'Paul A. Medeiros' paul
+
+chfn -f 'Paul A. Medeiros' paul
+
 chsh -s /usr/bin/fish paul
+
 if test -d /backup
 then
+
     chown paul:wheel /backup
+
 fi
+
 read -rt 60 -p "Type y to install modified grub configuration for the gigabyte board: "
-if test "$REPLY" = "y"
+
+if test "$REPLY" = y
 then
+
     echo Installing modified grub
+
     sed -ie '/GRUB_CMDLINE_LINUX=""/ s/""/"amd_iommu=on iommu=pt"/' /etc/default/grub
+
 else
+
     echo
+
 fi
+
 sed -ie '/GRUB_TIMEOUT_STYLE/ s/hidden/menu/' /etc/default/grub
+
 sed -ie '/GRUB_COLOR_HIGHLIGHT=/ s/green/cyan/' /etc/default/grub
+
 sed -ie 's/^#GRUB_BACKGROUND=".*"$/GRUB_BACKGROUND=""/' /etc/default/grub
+
 sed -ie '/^GRUB_THEME/ s/^/#/p' /etc/default/grub
+
 grub-mkconfig -o /boot/grub/grub.cfg
