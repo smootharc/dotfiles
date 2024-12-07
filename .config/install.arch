@@ -58,6 +58,7 @@ parallel
 partclone
 patch
 pavucontrol
+pdfgrep
 perl-dbd-sqlite
 perl-file-mimeinfo
 perl-term-readline-gnu
