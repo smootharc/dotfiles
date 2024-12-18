@@ -35,6 +35,8 @@ endif
 
 set statusline="  Hint: %z%= %A %10u:%-7g %15s %20d  "
 
+set trashdir=~/.local/share/vifm/Trash
+
 " ------------------------------------------------------------------------------
 
 " :mark mark /full/directory/path [filename]
@@ -423,7 +425,8 @@ nnoremap <F9> :redraw<cr>
 nnoremap <c-h> :hideui<cr>
 nnoremap <c-t> :tree!<cr>
 nnoremap <c-v> :vd -s=a %f &<cr>
-nnoremap <delete> :delete!<cr>
+nnoremap <delete> :delete<cr>
+nnoremap <s-delete> :delete!<cr>
 "nnoremap <space> t<down>
 "nnoremap <tab> <c-w>p
 nnoremap <m-s> gA
@@ -433,7 +436,7 @@ nnoremap <m-s> :invert s<cr>
 "nnoremap <c-tab> :tabc<cr>
 qnoremap e q
 set shell=/bin/fish
-set confirm=permdelete
+set confirm=permdelete,delete
 set timeoutlen=2000
 screen!
 
