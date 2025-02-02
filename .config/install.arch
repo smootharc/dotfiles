@@ -25,6 +25,7 @@ feh
 firefox
 fish
 fzf
+git
 gnucash
 gnucash-docs
 gvfs
@@ -53,6 +54,7 @@ opendoas
 openssh
 p7zip
 pacman-contrib
+pacutils
 par2cmdline
 parallel
 partclone
@@ -87,6 +89,7 @@ vim
 vivaldi
 vivaldi-ffmpeg-codecs
 wget
+xcape
 xdg-user-dirs
 xdg-utils
 xfsprogs
@@ -156,7 +159,7 @@ then
 
 fi
 
-read -rt 60 -p "Type y to install modified grub configuration for the gigabyte board: "
+read -r -p "Type y to install modified grub configuration for the gigabyte board: "
 
 if test "$REPLY" = y
 then
